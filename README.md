@@ -65,7 +65,8 @@ MODEL_DIR/
 This repository ships a small wrapper command:
 
 ```bash
-./bin/rpt run --model-dir /path/to/MODEL_DIR --prompt "Qual a capital da França?"
+./bin/rpt install --zip /path/to/production_triton_packed_recovered_l78.zip
+./bin/rpt run --prompt "Qual a capital da França?"
 ```
 
 Equivalent direct Triton command:
@@ -90,10 +91,16 @@ export HF_TOKEN=your_token_here
 
 ## Commands
 
+### Install a bundle
+
+```bash
+./bin/rpt install --zip /path/to/production_triton_packed_recovered_l78.zip
+```
+
 ### Run Triton path
 
 ```bash
-./bin/rpt run --model-dir /path/to/MODEL_DIR --prompt "Quanto é 12 x 8?"
+./bin/rpt run --prompt "Quanto é 12 x 8?"
 ```
 
 ### Run native structural path
@@ -113,7 +120,7 @@ export HF_TOKEN=your_token_here
 Near-term roadmap:
 
 1. stable install command
-2. bundle auto-download by version
+2. bundle auto-download by version or remote URL
 3. release packaging
 4. Homebrew formula
 5. curl installer
@@ -130,3 +137,7 @@ The main repository remains the source of truth for:
 - bundle generation
 
 This runtime repository is the product-facing execution layer.
+
+## Bundle Hosting Note
+
+GitHub Releases is not ideal for the current production bundle because the zip is too large for a clean release-asset workflow. The practical next host should be Hugging Face or another large-asset store, with `rpt-runtime` resolving the bundle URL from metadata.
