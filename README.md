@@ -126,6 +126,14 @@ Near-term roadmap:
 5. curl installer
 6. Mac/MPS and Ollama-like target exploration
 
+## Brand Direction
+
+Initial runtime-facing brand direction lives in:
+
+- [`docs/brand/BRAND_DIRECTION.md`](/Users/cesarfavero/Documents/MyPru/rpt-runtime/docs/brand/BRAND_DIRECTION.md)
+
+This is the current source of truth for the visual identity direction while the product layer is being formed.
+
 ## Relationship To The Main Repository
 
 The main repository remains the source of truth for:
