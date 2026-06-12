@@ -1,0 +1,12 @@
+rpt-runtime Notices
+
+rpt-runtime source code, documentation, and repository materials are published
+under the Apache License 2.0 unless a file states otherwise.
+
+This notice does not grant rights to third-party model weights, datasets,
+checkpoints, hosted services, or trademarks. Those remain subject to their own
+upstream licenses and terms.
+
+Gemma-family assets remain subject to the applicable Gemma Terms of Use:
+
+https://ai.google.dev/gemma/terms

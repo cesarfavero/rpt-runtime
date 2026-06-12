@@ -4,6 +4,15 @@ Runtime and CLI layer for the RPT packed ternary Gemma track.
 
 This repository is intentionally separate from the main research repository. Its job is to make the runtime, CLI, installation flow, and model bundle UX simpler for end users.
 
+Project site:
+
+- https://rpt.dog
+
+Related public repositories:
+
+- [RPT](https://github.com/cesarfavero/RPT): research, notebooks, validation, result artifacts, and reproducibility notes.
+- [rpt-model-bundles](https://github.com/cesarfavero/rpt-model-bundles): bundle manifests, checksums, release metadata, and bundle distribution notes.
+
 ## Scope
 
 This repository contains:
@@ -146,6 +155,27 @@ The main repository remains the source of truth for:
 
 This runtime repository is the product-facing execution layer.
 
+## Issues and Replication Reports
+
+Open issues in this repository for:
+
+- CLI install or execution errors;
+- runtime loader problems;
+- environment support reports;
+- documentation gaps specific to runtime usage;
+- reproduction notes for supported Linux/NVIDIA/Colab targets.
+
+For methodology, notebooks, benchmark interpretation, or result artifacts, use
+the main [RPT](https://github.com/cesarfavero/RPT) repository instead.
+
 ## Bundle Hosting Note
 
 GitHub Releases is not ideal for the current production bundle because the zip is too large for a clean release-asset workflow. The practical next host should be Hugging Face or another large-asset store, with `rpt-runtime` resolving the bundle URL from metadata.
+
+## License
+
+Apache License 2.0. See [`LICENSE`](LICENSE).
+
+Third-party model weights, datasets, checkpoints, and trademarks remain subject
+to their own upstream licenses and terms. Gemma-family assets remain subject to
+the applicable Gemma Terms of Use.
