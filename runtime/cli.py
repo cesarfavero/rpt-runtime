@@ -94,11 +94,15 @@ def validate_bundle_root(root: Path) -> None:
         root / 'adapter_recovered_l78',
         root / 'packed' / 'manifest.json',
         root / 'packed' / 'mlp_ternary_2bit.bin',
-        root / 'runtime' / 'run_triton_inference.py',
+        root / 'production_manifest.json',
+        root / 'prewarm_profile.json',
     ]
     missing = [str(p) for p in required if not p.exists()]
     if missing:
-        raise SystemExit('Invalid bundle layout. Missing:\n' + '\n'.join(f'- {m}' for m in missing))
+        raise SystemExit(
+            'Invalid bundle layout. Missing required model artifacts or metadata:\n'
+            + '\n'.join(f'- {m}' for m in missing)
+        )
 
 
 def install_from_dir(bundle_dir: Path, model_name: str, *, copy: bool = False) -> Path:

@@ -63,11 +63,16 @@ MODEL_DIR/
   packed/
     manifest.json
     mlp_ternary_2bit.bin
-  runtime/
   production_manifest.json
   prewarm_profile.json
   PRODUCTION_USAGE.txt
 ```
+
+Important:
+
+- the current Python path still depends on runtime source files during execution;
+- the target compiled product path must remove `runtime/*.py` from the public bundle contract;
+- see [`docs/BUNDLE_LAYOUT.md`](/Users/cesarfavero/Documents/MyPru/rpt-runtime/docs/BUNDLE_LAYOUT.md).
 
 ## CLI
 
@@ -83,6 +88,11 @@ Equivalent direct Triton command:
 ```bash
 python runtime/run_triton_inference.py --model-dir /path/to/MODEL_DIR --prompt "Qual a capital da França?"
 ```
+
+The current CLI behavior is the reference implementation.
+The intended public compiled command contract is frozen in:
+
+- [`docs/PUBLIC_CLI_CONTRACT.md`](/Users/cesarfavero/Documents/MyPru/rpt-runtime/docs/PUBLIC_CLI_CONTRACT.md)
 
 ## Installation
 
